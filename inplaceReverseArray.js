@@ -11,4 +11,6 @@ function inplaceReverseArray(arr) {
   return arr
 }
 
-console.log(inplaceReverseArray([1, 2, 3, 4, 5, 6]));
+// console.log(inplaceReverseArray([1, 2, 3, 4, 5, 6]));
+
+export default inplaceReverseArray
