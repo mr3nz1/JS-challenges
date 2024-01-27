@@ -1,4 +1,4 @@
-function sortArray([...arr]) {
+function sortObjectValuesToFemaleOrMale([...arr]) {
   let obj = { males: [], females: [] };
 
   for (let i = 0; i < arr.length; i++) {
