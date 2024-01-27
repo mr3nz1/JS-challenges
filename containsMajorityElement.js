@@ -27,24 +27,30 @@ function sortNumberArrInDesc(arr) {
 function containsMajorityElement(arr) {
   arr = sortNumberArrInDesc(arr);
 
+  let countOfCurrentNumOccurances = 1;
+  let containsMajEl = false;
+
   for (let i = 0; i < arr.length; i++) {
-    let countOfCurrentNumOccurances = 0;
-
-    for (let j = 0; j < arr.length; j++) {
-      if (j < arr.length - 1) {
-        if (arr[j] === arr[j + 1]) {
-          countOfCurrentNumOccurances += 1;
-        }
-      }
-
-      if (countOfCurrentNumOccurances > arr.length / 2) {
-        return true;
+    if (i < arr.length - 1) {
+      if (arr[i] === arr[i + 1]) {
+        countOfCurrentNumOccurances += 1;
+      } else {
+        countOfCurrentNumOccurances = 1;
       }
     }
+
+    console.log(countOfCurrentNumOccurances, arr.length / 2);
+    if (countOfCurrentNumOccurances > arr.length / 2) {
+      containsMajEl = true;
+      break;
+    }
+  }
+
+  if (containsMajEl) {
+    return true;
   }
 
   return false;
 }
 
-// console.log(containsMajorityElement([3, 1, 3, 4, 4, 5, 3, 5, 3, 3, 3, 6, 3]));
-console.log(containsMajorityElement([3, 1, 3, 4, 4]));
+console.log(containsMajorityElement([3, 1, 3, 4, 4, 5, 3, 5, 3, 3, 3, 6, 3]));
