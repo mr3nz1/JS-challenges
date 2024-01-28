@@ -1,4 +1,4 @@
-function reverseArray(arr) {
+function inplaceReverseArray(arr) {
   for (let i = 0; i < arr.length / 2; i++) {
     let correspondingIndex = (arr.length - 1) - i;
     let currentValue = arr[i]
@@ -11,4 +11,6 @@ function reverseArray(arr) {
   return arr
 }
 
-console.log(reverseArray([1, 2, 3, 4, 5, 6]));
+// console.log(inplaceReverseArray([1, 2, 3, 4, 5, 6]));
+
+export default inplaceReverseArray
